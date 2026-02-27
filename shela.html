@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For Shela 💖</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        h1 {
+            margin-top: 120px;
+            font-size: 40px;
+            color: #b30059;
+            animation: fadeIn 2s ease-in-out infinite alternate;
+        }
+
+        p {
+            font-size: 22px;
+            color: #800040;
+        }
+
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 25px;
+            animation: float 5s linear infinite;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 25px;
+            background-color: #ff4da6;
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            background-color: #ff1a8c;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0.6; transform: scale(1); }
+            to { opacity: 1; transform: scale(1.1); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-10vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="judul">I love u shelaa</h1>
+    <p id="pesan">Loading perasaan Rangga... ⏳</p>
+
+    <button onclick="confess()">Klik kalau Shela lucu gemesh 😳</button>
+
+    <script>
+        var crush = "Shela";
+        var loveLevel = 100;
+
+        setTimeout(function(){
+            document.getElementById("pesan").innerHTML =
+                "Status: Rangga jatuh cinta ke " + crush + " level " + loveLevel + "% 💖";
+        }, 1500);
+
+        function confess() {
+            document.getElementById("judul").innerHTML =
+            "ilovee u " + crush + " 💗";
+        }
+
+        function createHeart() {
+            var heart = document.createElement("div");
+            heart.className = "heart";
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = Math.random() * 20 + 20 + "px";
+            heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHeart, 500);
+    </script>
+
+</body>
+</html>
